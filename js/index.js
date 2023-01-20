@@ -119,19 +119,6 @@ class Game {
     const crashed = this.obstaceles.some((obstacel) => {
       return this.player.isCrashedWith(obstacel);
     });
-
-    if (crashed) {
-      cancelAnimationFrame(this.animateId);
-
-      ctx.clearRect(0,0,canvas.width,canvas,height);
-      ctx.font = "40px Arial";
-      ctx.fillStyle = "black";
-      ctx.fillRect(0,0,myCanvs.width,myCanvs.height);
-      ctx.fillStyle = "red";
-      ctx.fillText("Game over", myCanvs.width / 4, 200);
-      ctx.fillStyle = "white";
-      ctx.fillText(`Your final score: ${this.score}`, myCanvs.width / 6, 400);
-    }
   };
 
   updateScore = (score) => {
